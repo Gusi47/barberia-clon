@@ -1,0 +1,156 @@
+ @use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.formulario {
+
+    @include m.bgImage('../img/about-1.jpg');
+    width: 100%;
+    height: 100%;
+
+    @include m.tablet {
+        height: 100vh;
+    }
+
+    &__gridf {
+        @include m.grid(1, 1fr);
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        width: 90%;
+        height: 100%;
+
+        @include m.tablet {
+            @include m.grid(2, 1fr);
+            height: 90vh;
+        }
+    
+    }
+
+    &__flexf {
+        @include m.flex(flex, column, space-between, flex-start);
+            width: 100%;
+            height: 100%;
+            margin-top: 2rem;
+
+            @include m.tablet {
+                width: 60%;
+                height: 80%;
+                margin: 0 auto;
+            }
+        }
+
+        &__encabezadof {
+            @include m.flex(flex, column, flex-start, flex-start);
+        }
+
+        &__parrafof {
+            font-size: 1rem;
+            color: v.$blanco;
+            margin-bottom: .7rem;
+        }
+
+        &__lineaf {
+            margin: 0;
+            width: 5rem;
+            height: auto;
+        }
+
+        &__h22f {
+            color: v.$blanco;
+            line-height: 1;
+            font-weight: 400;
+            font-size: clamp(2rem, 6vw, 5rem);
+            margin-bottom: clamp(1rem, 1.5vw, 3rem);
+        }
+
+        &__encabezado2f {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        &__linea2f {
+            width: 2.5rem;
+            margin: 0;
+        }
+        &__parrafo2f {
+            width: 100%;
+            color: v.$blanco;
+            font-size: 1rem;
+        }
+
+        &__parrafo3f {
+            color: v.$blanco;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        &____datosf{
+            @include m.flex(flex, row, center, center);
+        }
+
+        &__datof {
+            color: v.$blanco;
+            font-size: 1rem;
+            display: inline-block;
+        }
+
+        &__imgf {
+            width: 1.1rem;
+          display: inline-block;
+          margin-right: 0.5rem;
+        }
+}
+
+.form {
+    @include m.flex(flex, column, space-around, flex-start);
+   width: 100%;
+    margin-top: 5rem;
+   
+
+    @include m.tablet {
+        width: 80%;
+    }
+
+    &__label{
+        color: v.$gris;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    &__input {
+        width: 100%;
+        height: 2rem;
+        background-color: v.$gris;
+        border: none;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        padding-left: 0.3rem;
+    }
+
+    &__textarea {
+        background-color: v.$gris;
+        width: 100%;
+    }
+
+    &__boton {
+        margin-top: 2rem;
+        border: 3px solid v.$gris;
+        color: v.$gris;
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        font-size: 1rem;
+        font-weight: 600;
+        width: 40%;
+        cursor: pointer;
+        
+
+        &:hover {
+            border: 3px solid v.$blanco;
+            color: v.$blanco;
+           
+        }
+    }
+}

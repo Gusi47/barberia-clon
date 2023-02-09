@@ -1,0 +1,130 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.barbers {
+    @include m.bgImage('../img/asset 12.jpg');
+    height: 100%;
+    background-attachment: fixed; 
+    display: flex; 
+    justify-content: space-around;
+    align-items: center;
+
+    @include m.tablet {
+        height: 100vh;
+    }
+ 
+
+    &__flexb {
+        
+    @include m.flex(flex, column, space-between, flex-start);
+         margin: 0 auto;
+         width: 100%;
+         padding: 0  1.5rem ;
+        //  height: 80vh;
+         @include m.tablet {
+             width: 65%;
+             height: 90%;
+           
+         }
+     }
+ 
+     &__encabezadob {
+         @include m.flex(flex, column, flex-start, flex-start);
+         height: 4rem;
+     }
+ 
+     &__parrafob {
+         font-size: 1rem;
+         color: v.$blanco;
+         margin-bottom: .7rem;
+     }
+ 
+     &__lineab {
+         margin: 0;
+         width: 7rem;
+         height: auto;
+     }
+
+     &__h2b {
+        color: v.$gris;
+        line-height: 1;
+        font-weight: 400;
+        font-size: clamp(1.5rem, 6vw, 5.5rem);
+        margin-bottom: clamp(.8rem, 1vw, 3rem);
+    }
+
+    &__encabezado2b {
+        @include m.flex(flex, row, flex-start, center);
+        height: 4rem;
+        margin-bottom: clamp(1rem, 1.5vw, 3rem);
+    }
+
+    &__parrafo2b {
+        font-size: 1rem;
+        color: v.$gris;
+        margin-left: 2rem;
+    }
+    
+
+    &__linea2b {
+        margin: 0;
+        width: 5rem;
+        height: auto;
+    }
+
+    &__textob {
+        width: 60%;
+    }
+
+    &__parrafo3b {
+        font-size: 1rem;
+        color: v.$gris;
+        font-weight: 700;
+        margin-bottom: 3rem;
+    }
+
+    &__imagenesb {
+        width: 80%;
+        @include m.flex(flex, column, space-between, center);
+        gap: 1rem;
+
+        @include m.tablet {
+            @include m.flex(flex, row, space-between, center);
+        }
+    }
+
+    &__card {
+        width: 100%;
+        height: auto;
+    }
+
+    &__imgb {
+        width: 100%;
+        height: 100%;
+    
+        
+    }
+
+    &__h4 {
+        color: v.$gris;
+        font-size: 1.3rem;
+        margin-top: 2rem;
+        font-weight: 500;
+    }
+
+    &__parrafo4b {
+        color: v.$gris;
+        font-size: 1rem;
+        margin-top: 1rem;
+        font-weight: 500;
+    }
+
+    &__lineasb {
+        width: 100%;
+        margin-top: 1rem;
+    }
+
+
+}
+
+

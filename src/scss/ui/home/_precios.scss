@@ -1,0 +1,101 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.precios {
+    @include m.bgImage('../img/asset 11.jpeg');
+    height: 100vh;
+    background-attachment: fixed;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+ 
+
+    &__flexp {
+        
+    @include m.flex(flex, column, center, flex-start);
+         margin: 0 auto;
+         width: 90%;
+        //  height: 80vh;
+         @include m.tablet {
+             width: 60%;
+             height: 70vh;
+         }
+     }
+ 
+     &__encabezadop {
+         @include m.flex(flex, column, flex-start, flex-start);
+         height: 4rem;
+     }
+ 
+     &__parrafop {
+         font-size: 1rem;
+         color: v.$blanco;
+         margin-bottom: .7rem;
+     }
+ 
+     &__lineap {
+         margin: 0;
+         width: 7rem;
+         height: auto;
+     }
+
+     &__h2p {
+        color: v.$blanco;
+        line-height: 1;
+        font-weight: 400;
+        font-size: clamp(1.5rem, 6vw, 5.5rem);
+        margin-bottom: clamp(.8rem, 1vw, 3rem);
+    }
+
+    &__encabezado2p {
+        @include m.flex(flex, row, flex-start, center);
+        height: 4rem;
+        margin-bottom: clamp(1rem, 1.5vw, 3rem);
+    }
+
+    &__parrafo2p {
+        font-size: 1rem;
+        color: v.$blanco;
+        margin-bottom: .7rem;
+    }
+    
+
+    &__linea2p {
+        margin: 0;
+        width: 5rem;
+        height: auto;
+    }
+
+    &__parrafo3p {
+        width: 100%;
+        font-size: .9rem;
+        color: v.$gris;
+        font-weight: 700;
+        margin-bottom: clamp(.8rem, 1vw, 3rem);
+
+        @include m.tablet {
+            width: 60%;
+        }
+    }
+}
+
+.textos {
+    width: 48%;
+    border-bottom: 1px solid v.$blanco;
+    padding: 1.5rem 0 0.5rem 0;
+    @include m.flex(flex, row, space-between, flex-start);
+
+    &:nth-last-of-type(1) {
+        margin-bottom: clamp(2rem, 3vw, 4rem);
+    }
+
+    &__parrafo4p {
+    
+        font-size: clamp(.7rem, 1vw, 1rem);
+        color: v.$gris;
+        font-weight: 700;
+    }
+}
+
+

@@ -1,0 +1,84 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.servicios {
+    @include m.bgImage('../img/asset 10.jpeg');
+    height: 100vh;
+    background-attachment: fixed;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+ 
+
+    &__flexs {
+        
+    @include m.flex(flex, column, center, flex-start);
+         margin: 0 auto;
+         width: 90%;
+         height: 100%;
+
+         @include m.tablet {
+             width: 60%;
+             height: 70vh;
+         }
+     }
+ 
+     &__encabezados {
+         @include m.flex(flex, column, flex-start, flex-start);
+         height: 4rem;
+     }
+ 
+     &__parrafos {
+         font-size: 1rem;
+         color: v.$blanco;
+         margin-bottom: .7rem;
+     }
+ 
+     &__lineas {
+         margin: 0;
+         width: 7rem;
+         height: auto;
+     }
+
+     &__h2s {
+        color: v.$blanco;
+        line-height: 1;
+        font-weight: 400;
+        font-size: clamp(2rem, 6vw, 5.5rem);
+        margin-bottom: clamp(1rem, 1.5vw, 3rem);
+    }
+}
+
+.icons {
+display: flex;
+
+    &__logo {
+        width: clamp(2rem, 4vw, 6rem);
+        height: clamp(2rem, 4vw, 6rem);
+    }
+
+    &__textoi {
+        @include m.flex(flex, column, space-between, flex-start);
+        margin-left: clamp(.8rem, 1.5vw, 4rem);
+    }
+
+    &__h3 {
+        color: v.$blanco;
+        font-size: clamp(1rem, 1.6vw, 1.8rem);
+        margin-bottom: clamp(.8rem, 1.5vw, 3rem);
+    }
+    
+    &__parrafoi {
+        width: 90%;
+        font-size: .8rem;
+        color: v.$gris;
+        font-weight: 700;
+        margin-bottom: clamp(.8rem, 1.5vw, 3rem);
+
+        @include m.tablet {
+            width: 60%;
+        }
+    }
+
+}

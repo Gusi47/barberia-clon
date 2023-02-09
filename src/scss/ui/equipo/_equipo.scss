@@ -1,0 +1,171 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+
+.equipo {
+    @include m.bgImage('../img/equipo.jpg');
+    @include m.flex(flex, column, space-between, flex-start);
+    height: 50vh;
+   
+
+    &__nave{
+        width: 90%;
+        margin: 0 auto;
+      
+        --state-close: scale(0);
+        --state-hamburguer:scale(1);
+        --state-menu: translate(-100%);
+
+        padding: 1rem 0 1rem 0;
+        display: grid;
+        justify-content: space-between;
+        align-items: center;
+        grid-template-columns: repeat(2, max-content);
+
+        &:target{
+            --state-menu: translate(0);
+            --state-close: scale(1);
+            --state-hamburguer:scale(0);
+        }
+
+        @include m.tablet {
+            width: 70%;
+            --state-hamburguer:scale(0);
+            --state-menu: translate(0);
+
+            &:target{
+                --state-close: scale(1);
+            }
+        }
+
+    }
+
+    &__fotoe {
+        width: auto;
+        height: 100%;
+    }
+
+    &__hamburguere, 
+    &__closee {
+        z-index: 90;
+        cursor: pointer;
+        grid-column: -2/-1;
+        grid-row: 1/2;
+        transition: .4s transform;
+    }
+
+    &__hamburguere{
+        transform: var(--state-hamburguer);
+    }
+
+    &__closee{
+        transform: var(--state-close);
+    }
+
+    &__icone{
+        width: 3rem;
+    }
+
+    &__linkse{
+        backdrop-filter: blur(7px);
+        z-index: 80;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 0;
+        display: grid;
+        align-content: center;
+        gap: 2em;
+        padding-left: 5%;
+        transform: var(--state-menu);
+        transition: .3s transform;
+        margin: 0;
+
+        @include m.tablet {
+            padding: 0;
+            background-color: unset;
+            position: unset;
+            gap: 1.2rem;
+            grid-auto-flow: column;
+            transform: unset;
+            grid-column: -2/-1;
+            grid-row: 1/2;
+            backdrop-filter: blur(0px);
+        }
+    }
+
+    &__iteme{
+        list-style: none;
+    }
+
+    &__linke{
+        color: v.$blanco;
+        font-family: v.$fuenteSecundaria;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 2rem;
+        font-weight: 900;
+        display: inline;
+        padding: 0.5rem;
+        border: 1px solid v.$blanco;
+
+        @include m.tablet {
+            font-size: .9rem;
+            font-weight: 900;
+            color: v.$blanco;
+            border: none;
+
+           &:hover {
+            color: v.$rojo;
+           }
+        }
+      }
+
+      &__flexe {
+        @include m.flex(flex, column, space-between, flex-start);
+      width: 70%;
+      margin: 0 auto
+    //    margin-left: 22rem;
+      }
+
+      &__parrafoe {
+        @include m.flex(flex, column, space-between, flex-start);
+
+        @include m.tablet {
+            @include m.flex(flex, row, space-between, center);
+        }
+      }
+
+      &__lineae {
+       
+        margin: 0;
+        width: 7rem;
+        height: auto;
+      }
+
+      &__textoe {
+      
+        color: v.$blanco;
+        font-size: clamp(0.8rem, 0.9vw, 1rem);
+        margin-top: 1rem;
+
+        @include m.tablet {
+            width: 70%;
+            margin-left: 2rem;
+            margin-top: 0;
+        }
+      }
+
+      &__h1e {
+        color: v.$blanco;
+        line-height: 1;
+        font-weight: 900;
+        text-transform: uppercase;
+        font-size: clamp(2rem, 6vw, 5.5rem);
+        margin-bottom: 2rem;
+      }
+    }

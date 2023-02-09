@@ -1,0 +1,110 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.about {
+    @include m.bgImage('../img/asset 9.jpeg');
+    @include m.flex(flex, row, center, center);
+    height: 100vh;
+  
+
+    @include m.tablet {
+        height: 100vh;
+    }
+
+    &__flexa {
+       display: flex;
+       flex-direction: column;
+        margin: 0 auto;
+        width: 90%;
+        height: 80%;
+        
+
+        
+        @include m.tablet {
+            width: 60%;
+            height: 70vh;
+        }
+    }
+
+    &__encabezado {
+        @include m.flex(flex, column, flex-start, flex-start);
+        height: 4rem;
+    }
+
+    &__parrafoa {
+        font-size: 1rem;
+        color: v.$blanco;
+        margin-bottom: .7rem;
+    }
+
+    &__lineaa {
+        margin: 0;
+        width: 7rem;
+        height: auto;
+    }
+
+    &__h2 {
+        color: v.$blanco;
+        line-height: 1;
+        font-weight: 400;
+        font-size: clamp(2rem, 6vw, 5.5rem);
+        margin-bottom: clamp(1rem, 1.5vw, 3rem);
+    }
+
+    &__encabezado2 {
+        @include m.flex(flex, row, flex-start, center);
+        height: 4rem;
+        margin-bottom: clamp(1rem, 1.5vw, 3rem);
+    }
+
+    &__parrafoa2 {
+        font-size: 1rem;
+        color: v.$blanco;
+        margin-bottom: .7rem;
+    }
+    
+
+    &__lineaa2 {
+        margin: 0;
+        width: 5rem;
+        height: auto;
+    }
+
+    &__parrafoa3 {
+        width: 90%;
+        font-size: clamp(1rem, 1.5vw, 3rem);
+        color: v.$blanco;
+        margin-bottom: 2rem;
+
+        @include m.tablet {
+            width: 60%;
+        }
+    }
+}
+
+.boton {
+    cursor: pointer;
+    border-color: v.$gris;
+    width: 10rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    transition: 300ms;
+    
+    &:hover {
+        border-color: v.$blanco;
+      
+    }
+
+    &__flecha {
+        width: 1.5rem;
+      
+    }
+
+    &__parrabtn {
+        font-size: 0.8rem;
+        color: v.$blanco;
+        text-transform: uppercase;
+
+    }
+}

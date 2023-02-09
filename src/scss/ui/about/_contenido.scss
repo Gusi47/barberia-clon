@@ -1,0 +1,118 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+
+.contenido {
+ 
+        @include m.bgImage('../img/about-1.jpg');
+        @include m.flex(flex, row, center, center);
+      
+        height: 100%;
+
+        @include m.tablet {
+            height: 100vh;
+        }
+
+    &__contenedor {
+      
+        @include m.flex(flex, column, space-between, center);
+        width: 100%;
+        padding: 2rem;
+       
+      
+        @include m.tablet {
+            @include m.flex(flex, row, space-between, center);
+            width: 60%;
+        }
+    }
+
+
+    &__flexc {
+        @include m.flex(flex, column, center, flex-start);
+        width: 100%;
+        height: 100%;
+}
+
+         &__encabezadoc {
+            @include m.flex(flex, column, flex-start, flex-start);
+            height: 4rem;
+        }
+
+        &__parrafoc {
+            font-size: 1rem;
+            color: v.$blanco;
+            margin-bottom: .7rem;
+        }
+
+        &__lineac {
+            margin: 0;
+            width: 5rem;
+            height: auto;
+        }
+
+        &__h22c {
+            color: v.$blanco;
+            line-height: 1;
+            font-weight: 400;
+            font-size: clamp(2rem, 6vw, 5rem);
+            margin-bottom: clamp(1rem, 1.5vw, 3rem);
+        }
+
+        &__encabezado2c {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        &__linea2c {
+            width: 2.5rem;
+        margin: 0;
+        
+        }
+        &__parrafo2c {
+            color: v.$blanco;
+            font-size: 1rem;
+        
+        }
+
+        &__flexa {
+            @include m.flex(flex, column, space-between, center);
+            width: 90%;
+    
+        }
+
+        &__parrafo3c, &__parrafo4c, &__parrafo5c, &__parrafo6c {
+            color: v.$gris;
+            font-size: 0.9rem;
+            margin-top: 3rem;
+            line-height: 1.5rem;
+            font-weight: 600;
+        }
+
+        &__parrafo4c {
+            column-count: unset;
+
+            @include m.tablet {
+            
+                column-count:2;
+            }
+        }
+
+        &__textoc {
+            width: 90%;
+
+            @include m.tablet {
+                width: 50%;
+            
+            }
+
+        }
+
+        &__parrafo6c {
+            margin: 0;
+            
+        }
+    
+
+}

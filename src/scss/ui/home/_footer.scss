@@ -1,0 +1,58 @@
+@use 'base/variables' as v;
+@use 'base/mixins' as m;
+
+.footer {
+
+    height: 100%;
+    @include m.bgImage('../img/asset 13.jpeg');
+    padding: clamp(2rem, 8vw, 12rem);
+ 
+    @include m.tablet {
+        height: 8vh;
+    }
+
+   &__gridf {
+    @include m.grid(1, 1fr);
+
+    @include m.tablet {
+        @include m.grid(3, 1fr);
+    }
+   }
+
+
+   &__h3f {
+    color: v.$gris;
+    font-size: 1.5rem;
+    font-weight: 500;
+   }
+
+   
+   &__parrafof {
+    color: v.$gris;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 1rem 0 1rem 0;
+   }
+
+    &__imgf {
+        background-color: v.$blanco;
+        width: 2rem;
+        height: 2rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        margin-top: 1rem;
+    }
+
+    &__redes {
+        @include m.flex(flex, row, space-around, center);
+        gap: 0.5rem;
+        width: 100%;
+        margin-top: 1rem;
+
+        @include m.tablet {
+            width: 30%;
+           justify-content: space-between;
+        }
+    
+    }
+}

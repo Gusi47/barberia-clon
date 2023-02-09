@@ -1,0 +1,25 @@
+@use 'base/variables' as v;
+
+.tex-center {
+    text-align: center; 
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+//  menu hamburguesa
+.container {
+    margin: 0 auto;
+    width: 60%;
+}
+
+.negro {
+    background-color:  v.$negro;
+    background-image: none;
+  
+}
+
+
+
+
